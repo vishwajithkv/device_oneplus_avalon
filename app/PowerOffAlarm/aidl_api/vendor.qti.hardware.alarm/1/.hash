@@ -1,0 +1,6 @@
+{
+  "stableCoreApis": [],
+  "stableInterfaces": [
+    "vendor.qti.hardware.alarm"
+  ]
+}

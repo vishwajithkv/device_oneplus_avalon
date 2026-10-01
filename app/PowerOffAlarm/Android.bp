@@ -4,17 +4,41 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+aidl_interface {
+    name: "vendor.qti.hardware.alarm",
+    vendor: true,
+    srcs: ["aidl/**/*.aidl"],
+    stability: "vintf",
+    backend: {
+        java: {
+            sdk_version: "module_current",
+        },
+        ndk: {
+            enabled: false,
+        },
+        cpp: {
+            enabled: false,
+        },
+    },
+    versions_with_info: [
+        {
+            version: "1",
+            imports: [],
+        },
+    ],
+    frozen: true,
+}
+
 android_app {
     name: "PowerOffAlarm",
     srcs: [
         "src/**/*.java",
-        "aidl/**/*.aidl",
     ],
-    aidl: {
-        local_include_dirs: ["aidl"],
-    },
     resource_dirs: ["res"],
     manifest: "AndroidManifest.xml",
+    libs: [
+        "vendor.qti.hardware.alarm-V1-java",
+    ],
     platform_apis: true,
     certificate: "platform",
     privileged: true,

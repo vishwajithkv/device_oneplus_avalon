@@ -6,6 +6,7 @@
 
 package vendor.qti.hardware.alarm;
 
+@VintfStability
 interface IAlarm {
     int cancelAlarm();
     long getAlarm();
