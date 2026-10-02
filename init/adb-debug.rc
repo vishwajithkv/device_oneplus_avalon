@@ -1,0 +1,8 @@
+# Temporary Avalon bring-up diagnostics. Remove after boot is fixed.
+
+on early-init
+    setprop persist.sys.usb.config adb
+
+on boot
+    setprop sys.usb.config adb
+    start adbd
