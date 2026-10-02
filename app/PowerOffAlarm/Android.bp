@@ -6,7 +6,9 @@
 
 aidl_interface {
     name: "vendor.qti.hardware.alarm",
+    owner: "qti",
     vendor: true,
+    local_include_dir: "aidl",
     srcs: ["aidl/**/*.aidl"],
     stability: "vintf",
     backend: {
@@ -36,7 +38,7 @@ android_app {
     ],
     resource_dirs: ["res"],
     manifest: "AndroidManifest.xml",
-    libs: [
+    static_libs: [
         "vendor.qti.hardware.alarm-V1-java",
     ],
     platform_apis: true,
